@@ -6,7 +6,8 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
         checked={todo.completed}
         onChange={(e) => onToggle(todo.id, e.target.checked)}
       />
-      <span className={todo.completed ? 'completed' : ''}>{todo.title}</span>
+      <span className={todo.completed ? "completed" : ""}>{todo.title}</span>
+
       <button onClick={() => onDelete(todo.id)} className="delete-btn">
         🗑
       </button>

@@ -1,13 +1,16 @@
-import TodoItem from './TodoItem';
+import TodoItem from "./TodoItem";
 
 export default function TodoList({ todos, onToggle, onDelete }) {
+  // If there are no todos, display a message
   if (todos.length === 0) return <p>No todos yet.</p>;
 
-  const activeTodos = todos.filter(todo => !todo.completed);
-  const completedTodos = todos.filter(todo => todo.completed);
+  // Filter active and completed todos separately
+  const activeTodos = todos.filter((todo) => !todo.completed);
+  const completedTodos = todos.filter((todo) => todo.completed);
 
   return (
     <div className="todo-sections">
+      {/* Section for active todos */}
       <div className="todo-section">
         <h2>Active</h2>
         <ul className="todo-list">
@@ -22,6 +25,7 @@ export default function TodoList({ todos, onToggle, onDelete }) {
         </ul>
       </div>
 
+      {/* Section for completed todos (only if there are any) */}
       {completedTodos.length > 0 && (
         <div className="todo-section">
           <h2>Completed</h2>
